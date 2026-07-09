@@ -1,42 +1,51 @@
 # 🚀 Scaled Dot-Product Self-Attention Mechanism From Scratch
 
-> A beginner-friendly implementation of the **Scaled Dot-Product Self-Attention** mechanism using **Python** and **NumPy**, demonstrating the fundamental building block of Transformer architectures.
+A Python implementation of the **Scaled Dot-Product Self-Attention** mechanism using **NumPy**. This project demonstrates the core concept behind the attention mechanism used in Transformer-based architectures such as **BERT**, **GPT**, and **Vision Transformers (ViT)**.
 
 ---
 
-## 📖 Overview
+## 📌 Table of Contents
 
-The Attention Mechanism is one of the most important innovations in modern Artificial Intelligence and Natural Language Processing (NLP). It enables models to focus on the most relevant parts of the input sequence, improving contextual understanding and overall performance.
-
-This project implements the **Scaled Dot-Product Self-Attention** algorithm from scratch using only **NumPy**, providing a clear understanding of how attention works internally without relying on deep learning frameworks such as TensorFlow or PyTorch.
-
----
-
-## ✨ Features
-
-- ✅ Built entirely with Python and NumPy
-- ✅ Computes Query (Q), Key (K), and Value (V) matrices
-- ✅ Implements Scaled Dot-Product Attention
-- ✅ Applies the Softmax function to obtain attention weights
-- ✅ Generates the final attention output
-- ✅ Clean and easy-to-understand implementation
-- ✅ Suitable for beginners learning Transformer models
+- [Overview](#-overview)
+- [Features](#-features)
+- [Project Structure](#-project-structure)
+- [Technologies Used](#-technologies-used)
+- [How Self-Attention Works](#-how-self-attention-works)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Sample Output](#-sample-output)
+- [Learning Outcomes](#-learning-outcomes)
+- [Future Enhancements](#-future-enhancements)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Author](#-author)
 
 ---
 
-## 🛠️ Technologies Used
+# 📖 Overview
 
-| Technology | Purpose |
-|------------|---------|
-| Python 3 | Programming Language |
-| NumPy | Matrix Operations |
-| Jupyter Notebook | Development Environment |
+The **Self-Attention Mechanism** enables a model to determine which parts of the input are most relevant when processing information. It is one of the key components of the Transformer architecture and has significantly advanced the field of Natural Language Processing (NLP).
+
+This project provides a clear implementation of the **Scaled Dot-Product Attention** algorithm using only **Python** and **NumPy**, making it easy to understand the mathematical operations involved without relying on deep learning frameworks.
 
 ---
 
-## 📂 Project Structure
+# ✨ Features
 
-```text
+- Implementation from scratch using Python
+- Uses only the NumPy library
+- Computes Query (Q), Key (K), and Value (V) matrices
+- Calculates Attention Scores
+- Applies Scaled Dot-Product Attention
+- Uses Softmax for attention weight calculation
+- Generates the final attention output
+- Beginner-friendly and well-commented code
+
+---
+
+# 📁 Project Structure
+
+```
 attention-mechanism-from-scratch/
 │
 ├── Attention_Mechanism.ipynb
@@ -47,60 +56,87 @@ attention-mechanism-from-scratch/
 
 ---
 
-## ⚙️ Algorithm
+# 🛠️ Technologies Used
 
-The implementation follows these steps:
-
-1. Create Input Embeddings
-2. Initialize Weight Matrices
-3. Generate Query (Q), Key (K), and Value (V)
-4. Compute Attention Scores
-
-\[
-Scores = QK^T
-\]
-
-5. Scale the Scores
-
-\[
-Scaled\ Scores = \frac{Scores}{\sqrt{d_k}}
-\]
-
-6. Apply Softmax
-
-\[
-Attention\ Weights = Softmax(Scaled\ Scores)
-\]
-
-7. Generate Final Output
-
-\[
-Output = Attention\ Weights \times V
-\]
+- Python 3.x
+- NumPy
+- Jupyter Notebook
 
 ---
 
-## ▶️ Getting Started
+# ⚙️ How Self-Attention Works
 
-### Clone the Repository
+The implementation follows these steps:
+
+### Step 1: Create Input Embeddings
+
+Input tokens are represented as embedding vectors.
+
+### Step 2: Initialize Weight Matrices
+
+Three learnable weight matrices are created:
+
+- Query Weight Matrix (WQ)
+- Key Weight Matrix (WK)
+- Value Weight Matrix (WV)
+
+### Step 3: Compute Query, Key, and Value
+
+```
+Q = X × WQ
+K = X × WK
+V = X × WV
+```
+
+### Step 4: Compute Attention Scores
+
+```
+Scores = Q × Kᵀ
+```
+
+### Step 5: Scale the Scores
+
+```
+Scaled Scores = Scores / √dₖ
+```
+
+where **dₖ** is the dimension of the key vectors.
+
+### Step 6: Apply Softmax
+
+```
+Attention Weights = Softmax(Scaled Scores)
+```
+
+### Step 7: Compute Final Output
+
+```
+Attention Output = Attention Weights × V
+```
+
+---
+
+# 💻 Installation
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/sibiralruban2007-creator/attention-mechanism-from-scratch.git
 ```
 
-### Navigate to the Project Folder
+Move to the project directory:
 
 ```bash
 cd attention-mechanism-from-scratch
 ```
 
-### Install Dependencies
+Install the required package:
 
 ```bash
 pip install numpy
 ```
 
-### Launch Jupyter Notebook
+Launch Jupyter Notebook:
 
 ```bash
 jupyter notebook
@@ -110,9 +146,9 @@ Open **Attention_Mechanism.ipynb** and run all cells.
 
 ---
 
-## 📊 Output
+# ▶️ Usage
 
-The program generates:
+Run the notebook to observe the following outputs:
 
 - Input Embeddings
 - Query Matrix (Q)
@@ -125,20 +161,36 @@ The program generates:
 
 ---
 
-## 🎯 Learning Objectives
+# 📊 Sample Output
 
-This project helps you understand:
+The notebook prints:
+
+- Input Embedding Matrix
+- Query Matrix
+- Key Matrix
+- Value Matrix
+- Attention Score Matrix
+- Scaled Attention Scores
+- Softmax Attention Weights
+- Final Self-Attention Output
+
+---
+
+# 🎯 Learning Outcomes
+
+After completing this project, you will understand:
 
 - Self-Attention Mechanism
 - Query, Key, and Value (QKV)
 - Scaled Dot-Product Attention
-- Softmax Function
 - Matrix Multiplication
+- Softmax Function
 - Transformer Fundamentals
+- NumPy Matrix Operations
 
 ---
 
-## 🚀 Future Improvements
+# 🚀 Future Enhancements
 
 - Multi-Head Attention
 - Positional Encoding
@@ -146,38 +198,45 @@ This project helps you understand:
 - Transformer Encoder
 - Transformer Decoder
 - Attention Visualization
+- PyTorch Implementation
+- TensorFlow Implementation
 
 ---
 
-## 🤝 Contributing
+# 🤝 Contributing
 
 Contributions are welcome.
 
-1. Fork this repository.
-2. Create a new branch.
+To contribute:
+
+1. Fork the repository.
+2. Create a feature branch.
 3. Commit your changes.
-4. Push the branch.
-5. Open a Pull Request.
+4. Push to your branch.
+5. Submit a Pull Request.
 
 ---
 
-## 📄 License
+# 📄 License
 
 This project is licensed under the **MIT License**.
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-**Sibiral Ruban**
+## Sibiral Ruban
 
 **B.Sc. Computer Science with Artificial Intelligence**
 
-- 🌐 GitHub: https://github.com/sibiralruban2007-creator
-- 💼 LinkedIn: https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME
+- GitHub: https://github.com/sibiralruban2007-creator
+- LinkedIn: https://www.linkedin.com/in/your-linkedin-profile
 
 ---
 
 ## ⭐ Support
 
-If you found this project useful, please consider giving it a **⭐ Star** on GitHub. Your support is greatly appreciated!
+If you found this project helpful, please consider giving it a **Star ⭐** on GitHub.
+
+Your support is greatly appreciated.
+
